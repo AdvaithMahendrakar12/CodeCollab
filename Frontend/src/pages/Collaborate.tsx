@@ -1,9 +1,7 @@
 
-import React from "react";
 import { useState } from "react";
 
 import Floating from "../assets/Floating.png";
-import Logo from "../assets/Logo.webp";
 import { useNavigate } from "react-router-dom";
 
 
@@ -29,7 +27,6 @@ const Collaborate = () => {
           />
         </div>
 
-        {/* Right side with form */}
         <div className="w-500 lg:w-1/2 max-w-md mr-9">
           <div className="mb-8 flex items-center">
             <div className="w-8 h-8 mr-2">
@@ -61,7 +58,7 @@ const Collaborate = () => {
               className="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:border-violet-400"
             />
 
-            <button className="w-full py-3 bg-violet-600 hover:bg-sky-800 text-gray-900 font-semibold rounded-lg transition-colors" onClick={() => navigate(`/collaborate/${roomId}/${username}`)}>
+            <button className="w-full py-3 bg-violet-600 hover:bg-sky-800 text-gray-900 font-semibold rounded-lg transition-colors" onClick={() => navigate(`/collaborate/${roomId}`)}>
               Join
             </button>
 

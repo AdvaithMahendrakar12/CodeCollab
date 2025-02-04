@@ -1,13 +1,20 @@
-import React from 'react'
+import React , {useCallback, useState} from 'react'
 import { createContext } from 'react'
-import { FileContextType } from '../types/FIleTypes'
+
+import { FileContextType,FileSystemItem } from '../types/FileTypes'; 
 
 
 
-const FileContext = createContext<FileContextType>(null); 
+
+export const FileContext = createContext<FileContextType|null>(null);
 
 
-function FileProvider({children}: {children: React.ReactNode}) {
+function FileProviderWrapper({children}: {children: React.ReactNode}) {
+ 
+    const [nodes , setNodes] = useState<FileSystemItem>(); 
+
+    // create a file
+
     
     return (
         <FileContext.Provider value={{}}>
@@ -16,4 +23,4 @@ function FileProvider({children}: {children: React.ReactNode}) {
     )
 }
 
-export default FileProvider; 
+export default FileProviderWrapper; 
