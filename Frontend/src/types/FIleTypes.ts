@@ -1,6 +1,7 @@
 
-type FileName = string
+export type FileName = string
 type FileContent = string
+export type Id = string
 
 export interface FileSystemItem {
     id: string
@@ -11,17 +12,24 @@ export interface FileSystemItem {
     isOpen?: boolean
 }
 
-export type FileContextType = {
-    fileSystem: FileSystemItem[]
-    setFileSystem: React.Dispatch<React.SetStateAction<FileSystemItem[]>>
-    currentFile: FileSystemItem | null
-    setCurrentFile: React.Dispatch<React.SetStateAction<FileSystemItem | null>>
-    createFile: (name: FileName, type: "file" | "directory") => void
-    deleteFile: (id: string) => void
-    updateFile: (id: string, content: FileContent) => void
-    openFile: (id: string) => void
-    closeFile: (id: string) => void
-    renameFile: (id: string, name: FileName) => void
+export interface FileContextType {
+    nodes: FileSystemItem
+    openFiles: FileSystemItem[]
+    activeFile: FileSystemItem | null
+    setActiveFile: (file: FileSystemItem) => void
+    closeFile: (fileId: Id) => void
+    toggleFolder: (dirId: Id) => void
+    collapseFolders: () => void
+    createFolder: (parentDirId: Id, name: FileName) => Id
+    updateFolder: (dirId: Id, children: FileSystemItem[]) => void
+    renameFolder: (dirId: Id, newName: FileName) => void
+    deleteFolder: (dirId: Id) => void
+    createFile: (parentDirId: Id, name: FileName) => Id
+    updateFileContent: (fileId: Id, content: FileContent) => void
+    openFile: (fileId: Id) => void
+    renameFile: (fileId: Id, newName: FileName) => boolean
+    deleteFile: (fileId: Id) => void
+    // downloadFilesAndFolders: () => void
 }
 
 

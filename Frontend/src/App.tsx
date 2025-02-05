@@ -1,7 +1,8 @@
 
 
+import FileView from './components/Editor/FileView';
 import Collaborate from './pages/Collaborate';
-import Editor from './pages/Editor';
+import EditorPage from './pages/EditorPage';
 import Home from './pages/Home'
 import { BrowserRouter as Router, Routes, Route, Navigate, useNavigate } from 'react-router-dom';
 
@@ -14,7 +15,8 @@ function App() {
       <Routes>
           <Route path="/" element={<Home/>}/>
           <Route path="/collaborate" element={<Collaborate/>}/>
-          <Route path="/editor" element={<Editor/>}/>
+          <Route path="/editor" element={<EditorPage/>}/>
+          <Route path='/test' element={<FileView/>}/>
       </Routes>
     </Router>
       

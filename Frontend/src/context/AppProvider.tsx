@@ -1,10 +1,11 @@
 import React from 'react'
+import  FileContextProvider  from './FileContext'
 
-function AppProvider() {
+function AppProvider({children} : {children: React.ReactNode}) {
   return (
-    <div>
-      
-    </div>
+        <FileContextProvider>
+            {children}
+        </FileContextProvider>
   )
 }
 
