@@ -1,6 +1,9 @@
 
 
+import Editor from './components/Editor/Editor';
+import EditorComponent from './components/Editor/EditorComponent';
 import FileView from './components/Editor/FileView';
+import SideBar from './components/Editor/SideBar';
 import Collaborate from './pages/Collaborate';
 import EditorPage from './pages/EditorPage';
 import Home from './pages/Home'
@@ -15,8 +18,11 @@ function App() {
       <Routes>
           <Route path="/" element={<Home/>}/>
           <Route path="/collaborate" element={<Collaborate/>}/>
-          <Route path="/editor" element={<EditorPage/>}/>
+          <Route path="/editorPage" element={<EditorPage/>}/>
           <Route path='/test' element={<FileView/>}/>
+          <Route path='/side' element={<SideBar/>}/>
+          <Route path="/editor" element={<EditorComponent/>}/>
+          
       </Routes>
     </Router>
       

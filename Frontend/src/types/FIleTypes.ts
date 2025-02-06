@@ -1,6 +1,6 @@
 
 export type FileName = string
-type FileContent = string
+export type FileContent = string
 export type Id = string
 
 export interface FileSystemItem {

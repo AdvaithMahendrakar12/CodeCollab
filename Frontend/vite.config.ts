@@ -7,6 +7,12 @@ export default defineConfig({
   resolve: {
     alias: {
       "@": path.resolve(__dirname, "./src"),
+      '@babel/runtime/helpers/extends': '@babel/runtime/helpers/esm/extends',
     },
   },
+  optimizeDeps: {
+    exclude: ['@babel/runtime/helpers/extends']
+  },
 })
+
+

@@ -60,7 +60,7 @@ function FileContextProvider({ children }: { children: React.ReactNode }) {
     setNodes((prev) => addDirectoryToParent(prev)); 
 
     return newFolder.id;
-  }, [nodes]);
+  }, [nodes.id]);
 
   const toggleFolder = (dirId: Id) => {
         const toggle = (folder: FileSystemItem): FileSystemItem => {
@@ -182,8 +182,9 @@ function FileContextProvider({ children }: { children: React.ReactNode }) {
               }
           }else{
             return folder;
-          }
+          }     
     }
+    setNodes((prev) => deleteDir(prev) || prev);
   },[nodes,setNodes]);
 
   const updateFileContent = useCallback((fileId: Id, newContent: string) => {
